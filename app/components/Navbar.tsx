@@ -4,9 +4,12 @@ import { Disclosure } from "@headlessui/react";
 import Link, { LinkProps } from "next/link";
 import { usePathname } from "next/navigation";
 import clsx from "clsx";
-import { Bars3, XMark } from "@/app/components/icons";
+import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/solid'
+
 import { PropsWithChildren } from "react";
 import { twMerge } from "tailwind-merge";
+import ThemeButton from "./ThemeButton";
+
 
 const navItems = [
   {
@@ -90,12 +93,14 @@ export default function Navbar() {
                       </NavItem>
                     );
                   })}
+                  <ThemeButton />
                 </div>
               </div>
 
               <div className="-mr-2 flex items-center sm:hidden">
+                <ThemeButton />
                 <Disclosure.Button className="inline-flex items-center justify-center rounded-md p-2 text-zinc-400 hover:bg-zinc-100 hover:text-zinc-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-emerald-500 dark:hover:bg-zinc-800">
-                  {open ? <XMark /> : <Bars3 />}
+                  {open ? <XMarkIcon /> : <Bars3Icon />}
                 </Disclosure.Button>
               </div>
             </div>
